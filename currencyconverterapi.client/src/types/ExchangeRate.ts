@@ -10,3 +10,9 @@ export interface ExchangeRatesResponse {
     effectiveDate: string;
     rates: ExchangeRate[];
 }
+
+export interface SingleRateResponse {
+    currency: string;
+    code: string;
+    rates: { mid: number; effectiveDate: string }[];
+}

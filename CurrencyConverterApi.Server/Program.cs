@@ -1,7 +1,16 @@
-using System.Reflection;
+using CurrencyConverterApi.Server.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration
+    .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "./SecureConfig"))
+    .AddJsonFile("secrets.json", optional: false, reloadOnChange: true);
+
+builder.Services.AddDbContext<Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<ExchangeRateService>();
 // Add services to the container.
 
 builder.Services.AddControllers();

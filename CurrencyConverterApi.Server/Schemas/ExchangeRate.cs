@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace CurrencyConverterApi.Server.Data
+namespace CurrencyConverterApi.Server.Schemas
 {
     public class Rate
     {

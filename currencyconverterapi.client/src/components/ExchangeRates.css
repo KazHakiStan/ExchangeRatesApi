@@ -1,11 +1,25 @@
 .exchange-rates-container {
     font-family: Arial, sans-serif;
     padding: 20px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.er-details {
+    width: fit-content;
+    align-items: start;
+}
+
+.er-detail {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
 }
 
 h2 {
     text-align: center;
-    color: #333;
+    color: aliceblue;
 }
 
 .error {
