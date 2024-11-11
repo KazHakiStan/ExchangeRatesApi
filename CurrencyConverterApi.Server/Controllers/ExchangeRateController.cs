@@ -1,3 +1,4 @@
+using CurrencyConverterApi.Server.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CurrencyConverterApi.Server.Controllers
@@ -14,6 +15,8 @@ namespace CurrencyConverterApi.Server.Controllers
         }
 
         [HttpGet(Name = "GetExchangeRates")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ExchangeRatesResponse))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get()
         {
             try
